@@ -1,2 +1,126 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 12px 0;
+
+  @include laptop {
+    padding: 0;
+  }
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__logo {
+    &-link {
+      display: inline-block;
+      width: 242px;
+      height: 77px;
+      background: url(../assets/logo.svg) center no-repeat;
+
+      @include laptop {
+        width: 49px;
+        height: 43px;
+        background-size: auto 43px;
+        background-position: left center;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 38px;
+
+    @include laptop {
+      display: none;
+    }
+
+    &-link {
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: $white;
+      transition: color ease-in-out 0.2s;
+      cursor: pointer;
+
+      @include desktop {
+        font-size: 18px;
+      }
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  &__login {
+    &-button {
+      padding: 17px;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: $black;
+      border: 1px solid $white;
+      border-radius: 100px;
+      background-color: $white;
+      transition-property: color, border-color, background-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+      will-change: color, border-color, background-color;
+      cursor: pointer;
+
+      @include laptop {
+        padding: 7px 17px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $orange;
+        border-color: $orange;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+
+    &-button {
+      display: block;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      box-sizing: border-box;
+      border: none;
+      background: url(../assets/burger.svg) center no-repeat;
+      transition: filter ease-in-out 0.2s;
+      will-change: filter;
+      filter: brightness(10);
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1);
+      }
+
+      &:active {
+        filter: brightness(1);
+      }
+    }
+  }
 }

@@ -41,9 +41,127 @@ img {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1332px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   box-sizing: border-box;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 12px 0;
+}
+@media (max-width: 992px) {
+  .header {
+    padding: 0;
+  }
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.header__logo-link {
+  display: inline-block;
+  width: 242px;
+  height: 77px;
+  background: url(../assets/logo.svg) center no-repeat;
+}
+@media (max-width: 992px) {
+  .header__logo-link {
+    width: 49px;
+    height: 43px;
+    background-size: auto 43px;
+    background-position: left center;
+  }
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 38px;
+}
+@media (max-width: 992px) {
+  .header__nav {
+    display: none;
+  }
+}
+.header__nav-link {
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  transition: color ease-in-out 0.2s;
+  cursor: pointer;
+}
+@media (max-width: 1340px) {
+  .header__nav-link {
+    font-size: 18px;
+  }
+}
+.header__nav-link:hover {
+  color: #fa6730;
+}
+.header__login-button {
+  padding: 17px;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  background-color: #ffffff;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  will-change: color, border-color, background-color;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .header__login-button {
+    padding: 7px 17px;
+    font-size: 14px;
+  }
+}
+.header__login-button:hover {
+  color: #fa6730;
+  border-color: #fa6730;
+  background-color: #000000;
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 992px) {
+  .header__burger {
+    display: block;
+  }
+}
+.header__burger-button {
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: url(../assets/burger.svg) center no-repeat;
+  transition: filter ease-in-out 0.2s;
+  will-change: filter;
+  filter: brightness(10);
+  cursor: pointer;
+}
+.header__burger-button:hover {
+  filter: brightness(1);
+}
+.header__burger-button:active {
+  filter: brightness(1);
 }
