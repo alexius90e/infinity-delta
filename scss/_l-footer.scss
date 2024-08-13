@@ -1,2 +1,62 @@
 .footer {
+  padding: 12px 0;
+  background-color: $black;
+
+  @include laptop {
+    padding: 0;
+  }
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__logo {
+    &-link {
+      display: inline-block;
+      width: 242px;
+      height: 77px;
+      background: url(../assets/logo.svg) center no-repeat;
+
+      @include laptop {
+        width: 49px;
+        height: 43px;
+        background-size: auto 43px;
+        background-position: left center;
+      }
+    }
+  }
+
+  &__login {
+    &-button {
+      padding: 17px;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: $black;
+      border: 1px solid $white;
+      border-radius: 100px;
+      background-color: $white;
+      transition-property: color, border-color, background-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+      will-change: color, border-color, background-color;
+      cursor: pointer;
+
+      @include laptop {
+        padding: 7px 17px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $orange;
+        border-color: $orange;
+        background-color: $black;
+      }
+    }
+  }
 }

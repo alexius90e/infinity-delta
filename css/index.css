@@ -176,6 +176,64 @@ img {
   }
 }
 
+.footer {
+  padding: 12px 0;
+  background-color: #000000;
+}
+@media (max-width: 992px) {
+  .footer {
+    padding: 0;
+  }
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.footer__logo-link {
+  display: inline-block;
+  width: 242px;
+  height: 77px;
+  background: url(../assets/logo.svg) center no-repeat;
+}
+@media (max-width: 992px) {
+  .footer__logo-link {
+    width: 49px;
+    height: 43px;
+    background-size: auto 43px;
+    background-position: left center;
+  }
+}
+.footer__login-button {
+  padding: 17px;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  background-color: #ffffff;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  will-change: color, border-color, background-color;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .footer__login-button {
+    padding: 7px 17px;
+    font-size: 14px;
+  }
+}
+.footer__login-button:hover {
+  color: #fa6730;
+  border-color: #fa6730;
+  background-color: #000000;
+}
+
 .first-screen {
   position: relative;
   overflow: hidden;
