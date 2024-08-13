@@ -1,0 +1,192 @@
+.first-screen {
+  position: relative;
+  overflow: hidden;
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  & .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 164px;
+    padding-bottom: 272px;
+
+    @include laptop {
+      padding-top: 124px;
+      padding-bottom: 364px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+
+      @include laptop {
+        width: 179px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 44px 0 52px;
+    font-family: 'Belgro', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    @include laptop {
+      margin: 36px 0 12px;
+      font-size: 48px;
+    }
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @include mobilesm {
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    &-item {
+      position: relative;
+      padding: 0 24px;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fa6730;
+
+      @include laptop {
+        padding: 0 7px;
+        font-size: 14px;
+      }
+
+      @include mobilesm {
+        padding: 0;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: block;
+        height: 7px;
+        width: 7px;
+        border-radius: 10px;
+        background-color: $orange;
+        transform: translateX(50%) translateY(-50%);
+
+        @include mobilesm {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    right: 10px;
+    bottom: 52px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    @include laptop {
+      left: 50%;
+      right: auto;
+      bottom: 139px;
+      transform: translateX(-50%);
+    }
+
+    &-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 200;
+      font-size: 24px;
+      color: #fa6730;
+
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      width: 48px;
+      overflow: hidden;
+      border: 1px solid #fa6730;
+      border-radius: 50px;
+
+      @keyframes scrollButton {
+        0% {
+          transform: translate3d(0, -30px, 0);
+        }
+        50% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(0, 30px, 0);
+        }
+      }
+
+      &::after {
+        content: '';
+        height: 14px;
+        width: 24px;
+        background: url(../assets/scroll-arrow.svg) center no-repeat;
+        transition: transform ease-in-out 0.1s;
+        animation-name: scrollButton;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+}

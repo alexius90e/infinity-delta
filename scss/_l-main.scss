@@ -1,2 +1,7 @@
 .main {
+  padding: 105px 0 0;
+
+  @include laptop {
+    padding: 60px 0 0;
+  }
 }
