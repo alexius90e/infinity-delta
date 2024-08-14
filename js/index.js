@@ -1,14 +1,16 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const square = entry.target.querySelector('.advantages__content');
+const advantages = document.querySelector('.advantages');
 
-    if (entry.isIntersecting) {
-      square.classList.add('animate');
-      return;
-    }
+if (advantages) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const square = entry.target.querySelector('.advantages__content');
 
-    square.classList.remove('animate');
+      if (entry.isIntersecting) {
+        square.classList.add('animate');
+        return;
+      }
+    });
   });
-});
 
-observer.observe(document.querySelector('.advantages'));
+  observer.observe(document.querySelector('.advantages'));
+}
