@@ -1,0 +1,105 @@
+.advantages {
+  padding: 135px 0 0;
+  overflow: hidden;
+
+  @include laptop {
+    padding: 65px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+
+    @include mobile {
+      gap: 18px;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+
+      @include mobile {
+        justify-content: flex-start;
+      }
+
+      & > * {
+        max-width: 632px;
+      }
+
+      &:first-child {
+        justify-content: flex-start;
+
+        @include mobile {
+          justify-content: flex-start;
+        }
+      }
+
+      &:last-child {
+        justify-content: flex-end;
+
+        @include mobile {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    &.square-animation {
+      background-color: orange;
+    }
+
+    &-count {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 128px;
+      color: $white;
+
+      @include mobile {
+        font-size: 64px;
+      }
+    }
+
+    &-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: 30px;
+      color: $white;
+
+      @include mobile {
+        font-size: 18px;
+      }
+
+      & span {
+        color: $orange;
+      }
+    }
+  }
+
+  &__content-item:nth-child(2) &__item {
+    @include mobile {
+      flex-direction: row-reverse;
+    }
+
+    &-text {
+      @include mobile {
+        text-align: right;
+      }
+    }
+  }
+
+  &__content.animate &__item {
+    animation: fadeInRight;
+    animation-duration: 2s;
+  }
+
+  &__content.animate &__content-item:nth-child(2) &__item {
+    animation: fadeInLeft;
+    animation-duration: 2s;
+  }
+}

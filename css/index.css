@@ -769,6 +769,105 @@ img {
   }
 }
 
+.advantages {
+  padding: 135px 0 0;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .advantages {
+    padding: 65px 0;
+  }
+}
+.advantages__content {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+}
+@media (max-width: 576px) {
+  .advantages__content {
+    gap: 18px;
+  }
+}
+.advantages__content-item {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 576px) {
+  .advantages__content-item {
+    justify-content: flex-start;
+  }
+}
+.advantages__content-item > * {
+  max-width: 632px;
+}
+.advantages__content-item:first-child {
+  justify-content: flex-start;
+}
+@media (max-width: 576px) {
+  .advantages__content-item:first-child {
+    justify-content: flex-start;
+  }
+}
+.advantages__content-item:last-child {
+  justify-content: flex-end;
+}
+@media (max-width: 576px) {
+  .advantages__content-item:last-child {
+    justify-content: flex-start;
+  }
+}
+.advantages__item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.advantages__item.square-animation {
+  background-color: orange;
+}
+.advantages__item-count {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 128px;
+  color: #ffffff;
+}
+@media (max-width: 576px) {
+  .advantages__item-count {
+    font-size: 64px;
+  }
+}
+.advantages__item-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  color: #ffffff;
+}
+@media (max-width: 576px) {
+  .advantages__item-text {
+    font-size: 18px;
+  }
+}
+.advantages__item-text span {
+  color: #fa6730;
+}
+@media (max-width: 576px) {
+  .advantages__content-item:nth-child(2) .advantages__item {
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 576px) {
+  .advantages__content-item:nth-child(2) .advantages__item-text {
+    text-align: right;
+  }
+}
+.advantages__content.animate .advantages__item {
+  animation: fadeInRight;
+  animation-duration: 2s;
+}
+.advantages__content.animate .advantages__content-item:nth-child(2) .advantages__item {
+  animation: fadeInLeft;
+  animation-duration: 2s;
+}
+
 .founder .container {
   position: relative;
   padding-left: 672px;
