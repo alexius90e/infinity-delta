@@ -1,0 +1,143 @@
+.another-programs {
+  padding: 116px 0 146px;
+
+  @include laptop {
+    padding: 63px 0 126px;
+  }
+
+  &__title {
+    margin: 0 0 76px;
+    font-family: 'Belgro', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include laptop {
+      margin: 0 0 53px;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 12px;
+  }
+
+  &__card {
+    position: relative;
+    flex: 0 0 calc(50% - 12px / 2);
+    display: flex;
+    flex-direction: column;
+    min-height: 288px;
+    padding: 26px 19px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid rgba($color: $orange, $alpha: 0);
+    border-radius: 30px;
+    transition: border ease-in-out 0.1s;
+
+    @include laptop {
+      flex: 1 1 100%;
+      min-height: 386px;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-title {
+      margin: 0;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    &-study {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px;
+        font-family: 'Belgro', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $orange;
+        border: 1px solid $orange;
+        border-radius: 100px;
+        transition: all ease-in-out 0.1s;
+
+        @include laptop {
+          color: $black;
+          background-color: $orange;
+        }
+
+        &:hover {
+          color: $black;
+          background-color: $orange;
+
+          @include laptop {
+            color: $orange;
+            background-color: rgba($color: $black, $alpha: 0.25);
+          }
+        }
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 27px;
+          height: 13px;
+          background: url(../assets/arrow.svg) center no-repeat;
+          transition: all ease-in-out 0.2s;
+
+          @include laptop {
+            filter: brightness(0);
+          }
+        }
+
+        &:hover::after {
+          filter: brightness(0);
+
+          @include laptop {
+            filter: brightness(1);
+          }
+        }
+      }
+    }
+
+    &-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      &-item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: translate3d(-50%, -50%, 0);
+        filter: brightness(0.4);
+      }
+    }
+  }
+}
