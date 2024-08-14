@@ -1194,3 +1194,108 @@ img {
     font-size: 14px;
   }
 }
+
+.program-includes {
+  padding: 88px 0;
+}
+@media (max-width: 992px) {
+  .program-includes {
+    padding: 62px 0;
+  }
+}
+.program-includes .container {
+  display: flex;
+  gap: 110px;
+}
+@media (max-width: 1200px) {
+  .program-includes .container {
+    gap: 38px;
+  }
+}
+@media (max-width: 992px) {
+  .program-includes .container {
+    flex-direction: column;
+  }
+}
+.program-includes__sidebar {
+  flex: 0 0 540px;
+}
+@media (max-width: 992px) {
+  .program-includes__sidebar {
+    flex: 0 1 auto;
+  }
+}
+.program-includes__title {
+  margin: 0 0 58px;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .program-includes__title {
+    margin-bottom: 38px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .program-includes__title {
+    font-size: 24px;
+  }
+}
+.program-includes__video {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+@media (max-width: 576px) {
+  .program-includes__video {
+    height: 342px;
+  }
+}
+.program-includes__video-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 100%;
+}
+.program-includes__info-block-title {
+  margin: 0 0 6px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  color: #fa6730;
+}
+@media (max-width: 992px) {
+  .program-includes__info-block-title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 576px) {
+  .program-includes__info-block-title {
+    font-size: 26px;
+  }
+}
+.program-includes__info-block-list {
+  padding-left: 26px;
+}
+.program-includes__info-block-list-item {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .program-includes__info-block-list-item {
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .program-includes__info-block-list-item {
+    font-size: 18px;
+  }
+}
