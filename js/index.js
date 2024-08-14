@@ -14,3 +14,27 @@ if (advantages) {
 
   observer.observe(document.querySelector('.advantages'));
 }
+
+const reviews = document.querySelector('.reviews');
+
+if (reviews) {
+  const reviewsSwiper = new Swiper('.reviews .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 12,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 1.5,
+      },
+      992: {
+        slidesPerView: 2,
+      }
+    },
+    navigation: {
+      nextEl: '.reviews .reviews__controls-next',
+      prevEl: '.reviews .reviews__controls-prev',
+    },
+  })
+}

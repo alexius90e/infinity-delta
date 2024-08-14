@@ -1,0 +1,156 @@
+.reviews {
+  padding: 100px 0 152px;
+  overflow: hidden;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 130px;
+
+    @include laptop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin: 0;
+    font-family: 'Belgro', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include laptop {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__controls {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    &-prev,
+    &-next {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      width: 48px;
+      overflow: hidden;
+      border: 1px solid #fa6730;
+      border-radius: 50px;
+
+      @include mobile {
+        width: 38px;
+        height: 38px;
+      }
+
+      &::after {
+        content: '';
+        height: 16px;
+        width: 20px;
+        background: url(../assets/scroll-arrow.svg) bottom center no-repeat;
+        background-size: 20px;
+      }
+    }
+
+    &-prev::after {
+      transform: rotate(90deg);
+    }
+
+    &-next::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  & .swiper {
+    overflow: visible;
+  }
+
+  &__slide {
+    padding: 24px 24px 36px 24px;
+    border: 1px solid $orange;
+    border-radius: 30px;
+
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin: 0 0 28px;
+
+      @include mobile {
+        margin-bottom: 22px;
+      }
+
+      &-avatar {
+        flex: 0 0 auto;
+        display: block;
+        width: 113px;
+        height: 113px;
+        border-radius: 100px;
+        border: 1px solid $white;
+        overflow: hidden;
+
+        @include mobile {
+          height: 90px;
+          width: 90px;
+        }
+
+        &-image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        &-name {
+          font-family: 'Belgro', sans-serif;
+          font-weight: 900;
+          font-size: 20px;
+          letter-spacing: 0em;
+          text-transform: uppercase;
+          color: #fff;
+        }
+
+        &-source {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          letter-spacing: 0em;
+          text-transform: uppercase;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          color: #fa6730;
+        }
+      }
+    }
+
+    &-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      letter-spacing: 0em;
+      color: #fff;
+    }
+  }
+}
