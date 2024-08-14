@@ -2125,3 +2125,62 @@ img {
   border-color: #fa6730;
   background-color: #000000;
 }
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader.hidden {
+  z-index: 0;
+  transition-delay: 1s;
+}
+.preloader.visible {
+  z-index: 1000;
+  transition-delay: 0;
+}
+.preloader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #000000;
+  transition: opacity ease-in-out 1s;
+  will-change: opacity;
+}
+.preloader.hidden::before {
+  opacity: 0;
+}
+.preloader.visible::before {
+  opacity: 1;
+}
+.preloader__image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 100%;
+  width: 237px;
+  height: auto;
+  transition: opacity ease-in-out 1s;
+  will-change: opacity;
+}
+@media (max-width: 992px) {
+  .preloader__image {
+    width: 180px;
+  }
+}
+.preloader.hidden .preloader__image {
+  opacity: 0;
+}
+.preloader.visible .preloader__image {
+  opacity: 1;
+}

@@ -45,7 +45,6 @@ const headeBurgerButton = document.querySelector('.header__burger-button');
 
 if (mainNav && mainNavCloseButton && headeBurgerButton) {
   headeBurgerButton.addEventListener('click', () => {
-    console.log(headeBurgerButton);
     mainNav.classList.remove('hidden');
     mainNav.classList.add('visible');
     document.body.classList.add('hidden');
@@ -63,4 +62,13 @@ if (mainNav && mainNavCloseButton && headeBurgerButton) {
       document.body.classList.remove('hidden');
     }
   });
+}
+
+const preloader = document.querySelector('.preloader');
+
+if (preloader) {
+  setTimeout(() => {
+    preloader.classList.remove('visible');
+    preloader.classList.add('hidden');
+  }, 3000);
 }

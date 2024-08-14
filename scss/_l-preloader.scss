@@ -1,0 +1,65 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.hidden {
+    z-index: 0;
+    transition-delay: 1s;
+  }
+
+  &.visible {
+    z-index: 1000;
+    transition-delay: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: $black;
+    transition: opacity ease-in-out 1s;
+    will-change: opacity;
+  }
+
+  &.hidden::before {
+    opacity: 0;
+  }
+
+  &.visible::before {
+    opacity: 1;
+  }
+
+  &__image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    max-width: 100%;
+    width: 237px;
+    height: auto;
+    transition: opacity ease-in-out 1s;
+    will-change: opacity;
+
+    @include laptop {
+      width: 180px;
+    }
+  }
+
+  &.hidden &__image {
+    opacity: 0;
+  }
+
+  &.visible &__image {
+    opacity: 1;
+  }
+}
