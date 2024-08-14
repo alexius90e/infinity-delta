@@ -1928,3 +1928,45 @@ img {
        object-fit: cover;
   }
 }
+
+.coming-soon {
+  padding: 51px 0 109px;
+}
+@media (max-width: 992px) {
+  .coming-soon {
+    padding: 50px 0 63px;
+  }
+}
+.coming-soon__title {
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.coming-soon__locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 19px;
+}
+@media (max-width: 992px) {
+  .coming-soon__locations {
+    gap: 6px;
+  }
+}
+.coming-soon__locations-item {
+  padding: 16px;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fa6730;
+  border: 1px solid #fa6730;
+  border-radius: 100px;
+}
+@media (max-width: 992px) {
+  .coming-soon__locations-item {
+    font-size: 16px;
+  }
+}
