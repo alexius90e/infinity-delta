@@ -1812,3 +1812,119 @@ img {
   transform: translate3d(-50%, -50%, 0);
   filter: brightness(0.4);
 }
+
+.location__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 58px 16px;
+  padding: 88px 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 992px) {
+  .location__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 28px;
+  }
+}
+.location__info {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  gap: 15px;
+}
+@media (max-width: 992px) {
+  .location__info {
+    margin-top: -36px;
+  }
+}
+.location__info-title {
+  margin: 0;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.location__info-locaton {
+  position: relative;
+  padding-left: 33px;
+  margin: 0;
+  list-style-type: none;
+}
+.location__info-locaton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background: url(../assets/location.svg) center no-repeat;
+}
+.location__info-locaton-item {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.location__info-locaton-item-title {
+  color: #fa6730;
+}
+.location__info-locaton-item-text {
+  color: #ffffff;
+}
+.location__info-email-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.location__info-email-link::before {
+  content: "";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background: url(../assets/mail.svg) center no-repeat;
+}
+.location__info-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.location__info-phone-link::before {
+  content: "";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background: url(../assets/call.svg) center no-repeat;
+}
+@media (max-width: 992px) {
+  .location__map {
+    height: 400px;
+  }
+}
+.location__map-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+@media (max-width: 992px) {
+  .location__map-image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
