@@ -1357,6 +1357,13 @@ img {
   overflow: hidden;
   border: 1px solid #fa6730;
   border-radius: 50px;
+  transition-property: background-color, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   .reviews__controls-prev, .reviews__controls-next {
@@ -1364,12 +1371,22 @@ img {
     height: 38px;
   }
 }
+.reviews__controls-prev:hover, .reviews__controls-next:hover {
+  background-color: #fa6730;
+}
+.reviews__controls-prev:active, .reviews__controls-next:active {
+  transform: scale(0.94);
+}
 .reviews__controls-prev::after, .reviews__controls-next::after {
   content: "";
   height: 16px;
   width: 20px;
   background: url(../assets/scroll-arrow.svg) bottom center no-repeat;
   background-size: 20px;
+  transition: filter ease-in-out 0.1s;
+}
+.reviews__controls-prev:hover::after, .reviews__controls-next:hover::after {
+  filter: brightness(0);
 }
 .reviews__controls-prev::after {
   transform: rotate(90deg);
@@ -1448,4 +1465,53 @@ img {
   font-size: 16px;
   letter-spacing: 0em;
   color: #fff;
+}
+
+.pages-nav {
+  position: fixed;
+  top: 144px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+@media (max-width: 992px) {
+  .pages-nav {
+    top: 80px;
+  }
+}
+.pages-nav__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  border: 1px solid #fa6730;
+  background-color: #000000;
+  border-radius: 50px;
+  transition-property: background-color, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.pages-nav__back:hover {
+  background-color: #fa6730;
+}
+.pages-nav__back:active {
+  transform: scale(0.94);
+}
+.pages-nav__back::after {
+  content: "";
+  height: 16px;
+  width: 20px;
+  background: url(../assets/scroll-arrow.svg) bottom center no-repeat;
+  background-size: 20px;
+  transform: rotate(90deg);
+  transition: filter ease-in-out 0.1s;
+}
+.pages-nav__back:hover::after {
+  filter: brightness(0);
 }

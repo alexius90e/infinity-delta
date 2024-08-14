@@ -1,0 +1,50 @@
+.pages-nav {
+  position: fixed;
+  top: 144px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  @include laptop {
+    top: 80px;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    border: 1px solid $orange;
+    background-color: $black;
+    border-radius: 50px;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.1s;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $orange;
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
+
+    &::after {
+      content: '';
+      height: 16px;
+      width: 20px;
+      background: url(../assets/scroll-arrow.svg) bottom center no-repeat;
+      background-size: 20px;
+      transform: rotate(90deg);
+      transition: filter ease-in-out 0.1s;
+    }
+
+    &:hover::after {
+      filter: brightness(0);
+    }
+  }
+}
