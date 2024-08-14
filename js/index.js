@@ -30,11 +30,37 @@ if (reviews) {
       },
       992: {
         slidesPerView: 2,
-      }
+      },
     },
     navigation: {
       nextEl: '.reviews .reviews__controls-next',
       prevEl: '.reviews .reviews__controls-prev',
     },
-  })
+  });
+}
+
+const mainNav = document.querySelector('.main-nav');
+const mainNavCloseButton = document.querySelector('.main-nav__close');
+const headeBurgerButton = document.querySelector('.header__burger-button');
+
+if (mainNav && mainNavCloseButton && headeBurgerButton) {
+  headeBurgerButton.addEventListener('click', () => {
+    console.log(headeBurgerButton);
+    mainNav.classList.remove('hidden');
+    mainNav.classList.add('visible');
+    document.body.classList.add('hidden');
+  });
+
+  mainNav.addEventListener('click', (event) => {
+    const isMainNav = event.target === event.currentTarget;
+    const isCloseButton = event.target === mainNavCloseButton;
+    const isMainNavMenuLink = event.target.classList.contains('main-nav__menu-item-link');
+    const isLoginButton = event.target.classList.contains('main-nav__login-button');
+
+    if (isMainNav || isCloseButton || isMainNavMenuLink || isLoginButton) {
+      mainNav.classList.remove('visible');
+      mainNav.classList.add('hidden');
+      document.body.classList.remove('hidden');
+    }
+  });
 }
