@@ -63,6 +63,29 @@
     @include mobile {
       font-size: 32px;
     }
+
+    &_sm {
+      margin: 96px 0 18px;
+      font-size: 48px;
+
+      @include laptop {
+        margin: 36px 0 13px;
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__description {
+    max-width: 776px;
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+
+    @include laptop {
+      font-size: 16px;
+    }
   }
 
   &__advantages {

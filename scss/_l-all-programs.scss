@@ -1,0 +1,145 @@
+.all-programs {
+  & .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include tablet {
+      flex: 37px;
+    }
+  }
+
+  &__title,
+  &__card {
+    flex: 0 0 calc(100% / 3 - 16px / 3 * 2);
+
+    @include desktop {
+      flex: 0 0 calc(50% - 16px / 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Belgro', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include tablet {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 424px;
+    padding: 26px 19px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid rgba($color: $orange, $alpha: 0);
+    border-radius: 30px;
+    transition: border ease-in-out 0.1s;
+
+    @include laptop {
+      min-height: 366px;
+    }
+
+    &:hover {
+      border: 1px solid rgba($color: $orange, $alpha: 1);
+    }
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+
+      &-image {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
+      }
+    }
+
+    &-title {
+      margin: 0 0 9px;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    &-description {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: $white;
+
+      & b {
+        font-weight: 700;
+        color: $orange;
+      }
+    }
+
+    &-study {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px;
+        font-family: 'Belgro', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $orange;
+        border: 1px solid $orange;
+        border-radius: 100px;
+        transition: all ease-in-out 0.1s;
+
+        &:hover {
+          color: $black;
+          background-color: $orange;
+        }
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 27px;
+          height: 13px;
+          background: url(../assets/arrow.svg) center no-repeat;
+          transition: all ease-in-out 0.2s;
+        }
+
+        &:hover::after {
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+}
