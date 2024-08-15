@@ -147,6 +147,10 @@
     color: #fff;
 
     @include laptop {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
       font-size: 28px;
     }
 

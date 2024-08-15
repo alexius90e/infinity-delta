@@ -2722,6 +2722,10 @@ img {
 }
 @media (max-width: 992px) {
   .modal__title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     font-size: 28px;
   }
 }
