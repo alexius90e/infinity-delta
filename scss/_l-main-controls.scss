@@ -9,7 +9,6 @@
   transform: translate3d(-50%, 0, 0);
 
   @include mobile {
-    top: calc(100vh - 160px);
     right: 0;
     left: 0;
     bottom: 0;
@@ -17,12 +16,6 @@
     padding-bottom: 16px;
     overflow: hidden;
     transform: none;
-    transition: top ease-in-out 0.2s;
-    
-  }
-
-  &:not(.visible) {
-    transition-delay: 0.2s;
   }
 
   &.visible {

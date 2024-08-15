@@ -2885,7 +2885,6 @@ img {
 }
 @media (max-width: 576px) {
   .main-controls {
-    top: calc(100vh - 160px);
     right: 0;
     left: 0;
     bottom: 0;
@@ -2893,11 +2892,7 @@ img {
     padding-bottom: 16px;
     overflow: hidden;
     transform: none;
-    transition: top ease-in-out 0.2s;
   }
-}
-.main-controls:not(.visible) {
-  transition-delay: 0.2s;
 }
 @media (max-width: 576px) {
   .main-controls.visible {
