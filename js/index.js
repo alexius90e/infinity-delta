@@ -168,8 +168,121 @@ if (mainControlsTogglerButton && mainControls && mainControlsButtons) {
   });
 
   mainControlsButtons.addEventListener('click', (event) => {
-    console.log(mainControlsButtons)
+    console.log(mainControlsButtons);
     mainControls.classList.remove('visible');
   });
-  
 }
+
+// custom date input
+
+const customDateInputs = document.querySelectorAll('.custom-date-input');
+
+customDateInputs.forEach((customDateInput) => {
+  const inputElem = customDateInput.querySelector('.custom-date-input input');
+  const fasadeElem = customDateInput.querySelector('.custom-date-input__fasade');
+  const calendarElem = customDateInput.querySelector('.custom-date-input__panel-calendar');
+  const monthElem = customDateInput.querySelector('.custom-date-input__panel-controls-month');
+  const prevButtonElem = customDateInput.querySelector('.custom-date-input__panel-controls-prev');
+  const nextButtonElem = customDateInput.querySelector('.custom-date-input__panel-controls-next');
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  let newMonth = currentMonth;
+  let newDate = currentDate;
+  let activeDate = null;
+
+  function initCalendar() {
+    const firstDayOfMonth = new Date(newDate.getFullYear(), newDate.getMonth(), 1);
+    const firstDayOfMonthIndex = firstDayOfMonth.getDay() === 0 ? 7 : firstDayOfMonth.getDay();
+    const daysInMonth = 32 - new Date(newDate.getFullYear(), newDate.getMonth(), 32).getDate();
+    calendarElem.innerHTML = null;
+    new Array(firstDayOfMonthIndex - 1).fill(null).forEach(() => {
+      const emptyElem = document.createElement('div');
+      calendarElem.append(emptyElem);
+    });
+    new Array(daysInMonth).fill(null).forEach((_, index) => {
+      const dayElem = document.createElement('div');
+      const dayElemDate = new Date(newDate.getFullYear(), newDate.getMonth(), index + 1);
+      dayElem.classList.add('custom-date-input__panel-calendar-item');
+      if (activeDate) {
+        if (activeDate.toDateString() === dayElemDate.toDateString()) {
+          dayElem.classList.add('active');
+        }
+      } else {
+        if (currentDate.toDateString() === dayElemDate.toDateString()) {
+          dayElem.classList.add('active');
+        }
+      }
+      dayElem.dataset.date = dayElemDate.toDateString();
+      dayElem.innerText = index + 1;
+      calendarElem.append(dayElem);
+    });
+  }
+
+  function initPanel() {
+    const newMonthName = newDate.toLocaleString('default', { month: 'long' });
+    monthElem.innerHTML = newMonthName;
+    initCalendar();
+    const day = activeDate !== null ? activeDate : currentDate;
+    const yearStr = day.getFullYear();
+    const monthStr = day.getMonth() < 10 ? `0${day.getMonth() + 1}` : `${day.getMonth() + 1}`;
+    const dayStr = day.getDate() < 10 ? `0${day.getDate()}` : `${day.getDate()}`;
+
+    fasadeElem.innerHTML = `${yearStr}/${monthStr}/${dayStr}`;
+    inputElem.value = `${yearStr}-${monthStr}-${dayStr}`
+  }
+
+  function changeMonth(increment) {
+    const changedMonth = newMonth + increment;
+    if (changedMonth >= currentMonth) {
+      if (changedMonth === currentMonth) prevButtonElem.classList.add('disabled');
+      if (changedMonth !== currentMonth) prevButtonElem.classList.remove('disabled');
+      const monthIncrement = changedMonth % 12;
+      const newYear = currentDate.getFullYear() + (changedMonth - monthIncrement) / 12;
+      newMonth = changedMonth;
+      newDate = new Date(`${newYear}, ${monthIncrement + 1}, 1`);
+    }
+    initPanel();
+  }
+
+  function activateDay(dayItem) {
+    const activeDay = new Date(dayItem.dataset.date);
+    const currentDay = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    );
+    if (activeDay >= currentDay) {
+      activeDate = activeDay;
+      initPanel();
+      hidePanel();
+    }
+  }
+
+  function showPanel() {
+    customDateInput.classList.add('active');
+  }
+
+  function hidePanel() {
+    customDateInput.classList.remove('active');
+  }
+
+  initPanel();
+
+  customDateInput.addEventListener('click', (event) => {
+    const isNextButton = event.target === nextButtonElem;
+    const isPrevButton = event.target === prevButtonElem;
+    const isFasade = event.target === fasadeElem;
+    const isCloseButton = event.target.classList.contains('custom-date-input__panel-close');
+    const isCalendarItem = event.target.classList.contains(
+      'custom-date-input__panel-calendar-item'
+    );
+
+    if (isNextButton) changeMonth(1);
+    if (isPrevButton) changeMonth(-1);
+    if (isCalendarItem) activateDay(event.target);
+    if (isFasade) {
+      showPanel();
+    }
+    if (isCloseButton) hidePanel();
+  });
+});

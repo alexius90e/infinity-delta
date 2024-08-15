@@ -56,6 +56,161 @@ img {
   box-sizing: border-box;
 }
 
+.custom-date-input {
+  position: relative;
+}
+.custom-date-input input {
+  display: none;
+}
+.custom-date-input.active::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  background-color: #000000;
+}
+.custom-date-input__fasade {
+  display: block;
+  width: 100%;
+  padding: 20px 30px;
+  min-height: 72px;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media (max-width: 992px) {
+  .custom-date-input__fasade {
+    min-height: 67px;
+    font-size: 20px;
+  }
+}
+.custom-date-input__fasade:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+}
+.custom-date-input__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  padding: 8px 8px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  background-color: #000000;
+  animation-name: fadeInUp;
+  animation-duration: 0.2s;
+}
+.active .custom-date-input__panel {
+  display: block;
+}
+.custom-date-input__panel-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  padding: 8px 20px;
+}
+.custom-date-input__panel-title {
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fa6730;
+}
+.custom-date-input__panel-close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border: none;
+  background: url(../assets/close-orange.svg) center no-repeat;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.custom-date-input__panel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.custom-date-input__panel-controls-prev, .custom-date-input__panel-controls-next {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../assets/arrow-sm.svg) center no-repeat;
+  cursor: pointer;
+}
+.custom-date-input__panel-controls-prev.disabled, .custom-date-input__panel-controls-next.disabled {
+  filter: brightness(10);
+}
+.custom-date-input__panel-controls-prev {
+  transform: rotate(-90deg);
+}
+.custom-date-input__panel-controls-next {
+  transform: rotate(90deg);
+}
+.custom-date-input__panel-controls-month {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+}
+.custom-date-input__panel-legenda {
+  display: flex;
+}
+.custom-date-input__panel-legenda-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 14.2857142857%;
+  height: 40px;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+  opacity: 0.4;
+}
+.custom-date-input__panel-calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
+.custom-date-input__panel-calendar > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 14.2857142857%;
+  height: 56px;
+}
+.custom-date-input__panel-calendar-item {
+  box-sizing: border-box;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 18px;
+}
+.custom-date-input__panel-calendar-item.active {
+  border: 1px solid #fa6730;
+  background-color: #fa6730;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -2183,6 +2338,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .preloader.hidden {
   z-index: 0;

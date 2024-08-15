@@ -349,7 +349,7 @@
       </div>
     </div>
 
-    <div class="modal modal_lg book-modal hidden">
+    <div class="modal modal_lg book-modal">
       <div class="modal__body">
         <div class="modal__heading">
           <h3 class="modal__title">
@@ -380,8 +380,39 @@
             <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
               <label class="modal__form-label">
                 <span class="modal__form-label-title">A convenient day</span>
-                <input class="modal__form-input" type="date" placeholder="--/--/----" required />
-                <span class="modal__form-label-prompt">Choose a convenient day for consultation</span>
+
+                <div class="custom-date-input">
+                  <div class="custom-date-input__fasade"></div>
+                  <div class="custom-date-input__panel">
+                    <div class="custom-date-input__panel-heading">
+                      <span class="custom-date-input__panel-title">Day</span>
+                      <div class="custom-date-input__panel-close"></div>
+                    </div>
+
+                    <div class="custom-date-input__panel-controls">
+                      <div class="custom-date-input__panel-controls-prev disabled"></div>
+                      <div class="custom-date-input__panel-controls-month"></div>
+                      <div class="custom-date-input__panel-controls-next"></div>
+                    </div>
+
+                    <div class="custom-date-input__panel-legenda">
+                      <div class="custom-date-input__panel-legenda-item">Mo</div>
+                      <div class="custom-date-input__panel-legenda-item">Tu</div>
+                      <div class="custom-date-input__panel-legenda-item">We</div>
+                      <div class="custom-date-input__panel-legenda-item">Th</div>
+                      <div class="custom-date-input__panel-legenda-item">Fr</div>
+                      <div class="custom-date-input__panel-legenda-item">Sa</div>
+                      <div class="custom-date-input__panel-legenda-item">Su</div>
+                    </div>
+
+                    <div class="custom-date-input__panel-calendar"></div>
+                  </div>
+                  <input type="date" required />
+                </div>
+
+                <span class="modal__form-label-prompt">
+                  Choose a convenient day for consultation
+                </span>
               </label>
 
               <label class="modal__form-label">

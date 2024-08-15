@@ -1,0 +1,178 @@
+.custom-date-input {
+  position: relative;
+
+  & input {
+    display: none;
+  }
+
+  &.active {
+    &::after {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1001;
+      background-color: $black;
+    }
+  }
+
+  &__fasade {
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
+    min-height: 72px;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    background-color: rgba($color: $black, $alpha: 0);
+
+    @include laptop {
+      min-height: 67px;
+      font-size: 20px;
+    }
+
+    &:focus {
+      outline: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 8px 8px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    background-color: $black;
+    animation-name: fadeInUp;
+    animation-duration: 0.2s;
+
+    .active & {
+      display: block;
+    }
+
+    &-heading {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+      padding: 8px 20px;
+    }
+
+    &-title {
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #fa6730;
+    }
+
+    &-close {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      border: none;
+      background: url(../assets/close-orange.svg) center no-repeat;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    &-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &-prev,
+      &-next {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: url(../assets/arrow-sm.svg) center no-repeat;
+        cursor: pointer;
+
+        &.disabled {
+          filter: brightness(10);
+        }
+      }
+
+      &-prev {
+        transform: rotate(-90deg);
+      }
+
+      &-next {
+        transform: rotate(90deg);
+      }
+
+      &-month {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    &-legenda {
+      display: flex;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc(100% / 7);
+        height: 40px;
+        font-family: 'Belgro', sans-serif;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: #fff;
+        opacity: 0.4;
+      }
+    }
+
+    &-calendar {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc(100% / 7);
+        height: 56px;
+      }
+
+      &-item {
+        box-sizing: border-box;
+        font-family: 'Belgro', sans-serif;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: $white;
+        border: 1px solid $black;
+        border-radius: 18px;
+        
+
+        &.active {
+          border: 1px solid $orange;
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
