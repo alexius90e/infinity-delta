@@ -561,7 +561,7 @@ img {
 }
 @media (max-width: 992px) {
   .first-screen {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px);
   }
 }
 .first-screen__video {
