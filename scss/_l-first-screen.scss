@@ -1,6 +1,9 @@
 .first-screen {
   position: relative;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100dvh - 105px);
   max-height: 1080px;
   overflow: hidden;
 
@@ -28,14 +31,18 @@
   & .container {
     position: relative;
     z-index: 2;
-    padding-top: 164px;
-    padding-bottom: 272px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     box-sizing: border-box;
 
     @include laptop {
-      padding-top: 124px;
-      padding-bottom: 364px;
     }
+  }
+
+  &__content {
+    margin-top: -140px;
   }
 
   &__logo {
@@ -50,7 +57,7 @@
       max-width: 100%;
       height: auto;
 
-      @include laptop {
+      @include desktop {
         width: 179px;
       }
     }
@@ -65,7 +72,7 @@
     text-align: center;
     color: #fff;
 
-    @include laptop {
+    @include desktop {
       margin: 36px 0 12px;
       font-size: 48px;
     }
@@ -82,7 +89,7 @@
       margin: 96px 0 18px;
       font-size: 48px;
 
-      @include laptop {
+      @include desktop {
         margin: 36px 0 13px;
         font-size: 30px;
       }
@@ -97,7 +104,7 @@
     text-align: center;
     color: #fff;
 
-    @include laptop {
+    @include desktop {
       font-size: 16px;
     }
   }
@@ -125,7 +132,7 @@
       text-align: center;
       color: #fa6730;
 
-      @include laptop {
+      @include desktop {
         padding: 0 7px;
         font-size: 14px;
       }
@@ -176,7 +183,7 @@
     @include laptop {
       left: 50%;
       right: auto;
-      bottom: 139px;
+      bottom: 150px;
       transform: translateX(-50%);
     }
 
