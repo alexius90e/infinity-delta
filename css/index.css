@@ -192,11 +192,6 @@ img {
   padding: 12px 0;
   background-color: #000000;
 }
-@media (max-width: 992px) {
-  .footer {
-    padding: 0;
-  }
-}
 .footer .container {
   display: flex;
   justify-content: space-between;
