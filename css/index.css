@@ -2526,7 +2526,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 .preloader.hidden {
   z-index: 0;
