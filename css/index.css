@@ -2567,7 +2567,7 @@ img {
   position: fixed;
   left: 50%;
   bottom: 28px;
-  z-index: 300;
+  z-index: 500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2575,7 +2575,7 @@ img {
 }
 @media (max-width: 576px) {
   .main-controls {
-    top: calc(100vh - 106px);
+    top: calc(100vh - 160px);
     right: 0;
     left: 0;
     bottom: 0;
