@@ -63,18 +63,21 @@ img {
   display: none;
 }
 .custom-date-input.active::after {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1001;
+  z-index: 1;
   background-color: #000000;
+  opacity: 0;
 }
 .custom-date-input__fasade {
   display: block;
   width: 100%;
   padding: 20px 30px;
+  padding-right: 50px;
   min-height: 72px;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
@@ -83,7 +86,9 @@ img {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0);
+  background: url(../assets/dropdown.svg) center right 30px no-repeat;
+  background-color: #000000;
+  cursor: pointer;
 }
 @media (max-width: 992px) {
   .custom-date-input__fasade {
@@ -209,6 +214,154 @@ img {
 .custom-date-input__panel-calendar-item.active {
   border: 1px solid #fa6730;
   background-color: #fa6730;
+}
+
+.custom-time-input {
+  position: relative;
+}
+.custom-time-input input {
+  display: none;
+}
+.custom-time-input.active::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: #000000;
+  opacity: 0;
+}
+.custom-time-input__fasade {
+  display: block;
+  width: 100%;
+  padding: 20px 30px;
+  padding-right: 50px;
+  min-height: 72px;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  background: url(../assets/dropdown.svg) center right 30px no-repeat;
+  background-color: #000000;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .custom-time-input__fasade {
+    min-height: 67px;
+    font-size: 20px;
+  }
+}
+.custom-time-input__fasade:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+}
+.custom-time-input__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: none;
+  padding: 8px 8px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  background-color: #000000;
+  animation-name: fadeInUp;
+  animation-duration: 0.2s;
+}
+.active .custom-time-input__panel {
+  display: block;
+}
+.custom-time-input__panel-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 8px 20px;
+}
+.custom-time-input__panel-title {
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fa6730;
+}
+.custom-time-input__panel-close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border: none;
+  background: url(../assets/close-orange.svg) center no-repeat;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.custom-time-input__panel-controls {
+  display: flex;
+  gap: 40px;
+}
+.custom-time-input__panel-controls > * {
+  flex: 0 0 calc(50% - 20px);
+}
+.custom-time-input__panel-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 4px;
+}
+.custom-time-input__panel-input-title {
+  flex: 1 1 100%;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
+  opacity: 0.6;
+}
+.custom-time-input__panel-input-minus, .custom-time-input__panel-input-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 60px;
+  height: 40px;
+  box-sizing: border-box;
+  font-family: "Belgro", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 150%;
+  text-align: center;
+  color: #fa6730;
+  border: 1px solid #fa6730;
+  border-radius: 12px;
+  transition-property: color, background-color;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.custom-time-input__panel-input-minus:hover, .custom-time-input__panel-input-plus:hover {
+  color: #000000;
+  background-color: #fa6730;
+}
+.custom-time-input__panel-input-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  font-family: "Belgro", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #fff;
 }
 
 .header {

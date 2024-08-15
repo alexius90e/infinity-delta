@@ -228,7 +228,7 @@ customDateInputs.forEach((customDateInput) => {
     const dayStr = day.getDate() < 10 ? `0${day.getDate()}` : `${day.getDate()}`;
 
     fasadeElem.innerHTML = `${yearStr}/${monthStr}/${dayStr}`;
-    inputElem.value = `${yearStr}-${monthStr}-${dayStr}`
+    inputElem.value = `${yearStr}-${monthStr}-${dayStr}`;
   }
 
   function changeMonth(increment) {
@@ -269,6 +269,7 @@ customDateInputs.forEach((customDateInput) => {
   initPanel();
 
   customDateInput.addEventListener('click', (event) => {
+    const isСustomDateInputElem = event.target === event.currentTarget;
     const isNextButton = event.target === nextButtonElem;
     const isPrevButton = event.target === prevButtonElem;
     const isFasade = event.target === fasadeElem;
@@ -280,9 +281,98 @@ customDateInputs.forEach((customDateInput) => {
     if (isNextButton) changeMonth(1);
     if (isPrevButton) changeMonth(-1);
     if (isCalendarItem) activateDay(event.target);
-    if (isFasade) {
-      showPanel();
-    }
+    if (isFasade) showPanel();
     if (isCloseButton) hidePanel();
+    if (isСustomDateInputElem) hidePanel();
+  });
+});
+
+// custom date input
+
+const customTimeInputs = document.querySelectorAll('.custom-time-input');
+
+customTimeInputs.forEach((customTimeInput) => {
+  const inputElem = customTimeInput.querySelector('.custom-time-input input');
+  const fasadeElem = customTimeInput.querySelector('.custom-time-input__fasade');
+  const hourBlockElem = customTimeInput.querySelector('.custom-time-input__panel-input_hour');
+  const minuteBlockElem = customTimeInput.querySelector('.custom-time-input__panel-input_minute');
+  const hourMinusElem = hourBlockElem.querySelector('.custom-time-input__panel-input-minus');
+  const hourPlusElem = hourBlockElem.querySelector('.custom-time-input__panel-input-plus');
+  const hourValueElem = hourBlockElem.querySelector('.custom-time-input__panel-input-time');
+  const minuteMinusElem = minuteBlockElem.querySelector('.custom-time-input__panel-input-minus');
+  const minutePlusElem = minuteBlockElem.querySelector('.custom-time-input__panel-input-plus');
+  const minuteValueElem = minuteBlockElem.querySelector('.custom-time-input__panel-input-time');
+  const actions = { plus: '+', minus: '-' };
+  const currentDate = new Date();
+  let hours = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+
+  function changeMinutes(action) {
+    const step = 5;
+    const minLimit = 0;
+    const maxLimit = 60;
+    const baseValue = Math.floor(minutes / step) * step;
+    const newValuePlus = baseValue + step;
+    const newValueMinus = baseValue - step;
+    if (action === actions.plus && newValuePlus >= maxLimit) {
+      minutes = minLimit;
+    } else if (action === actions.plus && newValuePlus < maxLimit) {
+      minutes = newValuePlus;
+    } else if (action === actions.minus && newValueMinus < minLimit) {
+      minutes = minLimit;
+    } else if (action === actions.minus && newValueMinus === minLimit) {
+      minutes = maxLimit - step;
+    } else if (action === actions.minus && newValueMinus > minLimit) {
+      minutes = newValueMinus;
+    }
+    initPanel();
+  }
+
+  function changeHours(action) {
+    let newValue = 0;
+    if (action === actions.plus) {
+      newValue = hours + 1 >= 24 ? 0 : hours + 1;
+    } else if (action === actions.minus) {
+      newValue = hours - 1 <= 0 ? 23 : hours - 1;
+    }
+    hours = newValue;
+    initPanel();
+  }
+
+  function showPanel() {
+    customTimeInput.classList.add('active');
+  }
+
+  function hidePanel() {
+    customTimeInput.classList.remove('active');
+  }
+
+  function initPanel() {
+    const timeStr = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
+    fasadeElem.innerHTML = timeStr;
+    hourValueElem.innerHTML = hours;
+    minuteValueElem.innerHTML = minutes;
+    inputElem.value = timeStr;
+  }
+
+  initPanel();
+
+  customTimeInput.addEventListener('click', (event) => {
+    const isСustomTimeInputElem = event.target === event.currentTarget;
+    const isHourMinusElem = event.target === hourMinusElem;
+    const isHourPlusElem = event.target === hourPlusElem;
+    const isMinuteMinusElem = event.target === minuteMinusElem;
+    const isMinutePlusElem = event.target === minutePlusElem;
+    const isFasade = event.target === fasadeElem;
+    const isCloseButton = event.target.classList.contains('custom-time-input__panel-close');
+
+    if (isHourMinusElem) changeHours(actions.minus);
+    if (isHourPlusElem) changeHours(actions.plus);
+    if (isMinuteMinusElem) changeMinutes(actions.minus);
+    if (isMinutePlusElem) changeMinutes(actions.plus);
+    if (isFasade) showPanel();
+    if (isFasade) showPanel();
+    if (isCloseButton) hidePanel();
+    if (isСustomTimeInputElem) hidePanel();
   });
 });
