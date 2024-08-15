@@ -28,7 +28,7 @@
         </nav>
 
         <div class="header__login">
-          <button class="header__login-button">LOGIN</button>
+          <button class="header__login-button login">LOGIN</button>
         </div>
 
         <div class="header__burger">
@@ -60,10 +60,21 @@
         </ul>
 
         <div class="main-nav__login">
-          <button class="main-nav__login-button">LOGIN</button>
+          <button class="main-nav__login-button login">LOGIN</button>
         </div>
       </div>
     </nav>
+
+    <section class="main-controls">
+      <div class="main-controls__toggler">
+        <button class="main-controls__toggler-button">call/consultation</button>
+      </div>
+
+      <div class="main-controls__buttons">
+        <button class="main-controls__button-book book">Book consultation</button>
+        <button class="main-controls__button-call call">Call Now</button>
+      </div>
+    </section>
 
     <main class="main">
       <section class="first-screen">
@@ -294,13 +305,192 @@
         </div>
 
         <div class="footer__login">
-          <button class="footer__login-button">LOGIN</button>
+          <button class="footer__login-button login">LOGIN</button>
         </div>
       </div>
     </footer>
 
-    <div class="preloader visible">
+    <section class="preloader visible">
       <img class="preloader__image" src="./assets/preloader.gif" alt="preloader" />
+    </section>
+
+    <div class="modal login-modal hidden">
+      <div class="modal__body">
+        <div class="modal__heading">
+          <h3 class="modal__title">LOGIN</h3>
+          <button class="modal__close"></button>
+        </div>
+
+        <div class="modal__content">
+          <form class="modal__form">
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">You login</span>
+                <input class="modal__form-input" type="text" placeholder="login" required />
+                <span class="modal__form-label-prompt">
+                  Enter your username in the signed contract
+                </span>
+              </label>
+
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">Your password</span>
+                <input class="modal__form-input" type="password" placeholder="password" required />
+                <span class="modal__form-label-prompt">
+                  Enter your password that we have sent you
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <button class="modal__form-button">LOGIN</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal_lg book-modal hidden">
+      <div class="modal__body">
+        <div class="modal__heading">
+          <h3 class="modal__title">
+            Book <br />
+            consultation <span>free</span>
+          </h3>
+          <button class="modal__close"></button>
+        </div>
+
+        <div class="modal__content">
+          <form class="modal__form">
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">You name</span>
+                <input class="modal__form-input" type="text" placeholder="User Name" required />
+                <span class="modal__form-label-prompt"> Enter your name </span>
+              </label>
+
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">Phone number</span>
+                <input class="modal__form-input" type="tel" placeholder="User Phone" required />
+                <span class="modal__form-label-prompt">
+                  Enter your phone number for communication
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">A convenient day</span>
+                <input class="modal__form-input" type="date" placeholder="--/--/----" required />
+                <span class="modal__form-label-prompt">Choose a convenient day for consultation</span>
+              </label>
+
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">What time is convenient</span>
+                <input class="modal__form-input" type="time" placeholder="User Phone" required />
+                <span class="modal__form-label-prompt">
+                  Choose a convenient period of time for you to contact you
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">What are your goals?</span>
+                <input
+                  class="modal__form-input"
+                  type="text"
+                  placeholder="A field for your text"
+                  required
+                />
+                <span class="modal__form-label-prompt"> Enter your Describe your goals </span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">Mail</span>
+                <input class="modal__form-input" type="email" placeholder="User Email" required />
+                <span class="modal__form-label-prompt">
+                  The email address was entered incorrectly
+                </span>
+              </label>
+
+              <label class="modal__form-checkbox">
+                <input type="checkbox" checked required />
+                <span class="modal__form-checkbox-icon"></span>
+                <span class="modal__form-checkbox-text">I agree with the privacy policy</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <button class="modal__form-button">Send</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal_lg call-modal hidden">
+      <div class="modal__body">
+        <div class="modal__heading">
+          <h3 class="modal__title">
+            Call<br />
+            Now
+          </h3>
+          <button class="modal__close"></button>
+        </div>
+
+        <div class="modal__content">
+          <form class="modal__form">
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">You name</span>
+                <input class="modal__form-input" type="text" placeholder="User Name" required />
+                <span class="modal__form-label-prompt"> Enter your name </span>
+              </label>
+
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">Phone number</span>
+                <input class="modal__form-input" type="tel" placeholder="User Phone" required />
+                <span class="modal__form-label-prompt">
+                  Enter your phone number for communication
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">What are your goals?</span>
+                <input
+                  class="modal__form-input"
+                  type="text"
+                  placeholder="A field for your text"
+                  required
+                />
+                <span class="modal__form-label-prompt">Enter your Describe your goals</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
+              <label class="modal__form-label">
+                <span class="modal__form-label-title">Mail</span>
+                <input class="modal__form-input" type="email" placeholder="User Email" required />
+                <span class="modal__form-label-prompt">Enter your email address</span>
+              </label>
+
+              <label class="modal__form-checkbox">
+                <input type="checkbox" checked required />
+                <span class="modal__form-checkbox-icon"></span>
+                <span class="modal__form-checkbox-text">I agree with the privacy policy</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="modal__form-fieldset">
+              <button class="modal__form-button">call</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

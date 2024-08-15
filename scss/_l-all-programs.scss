@@ -1,4 +1,10 @@
 .all-programs {
+  padding: 136px 0;
+
+  @include laptop {
+    padding: 59px 0;
+  }
+
   & .container {
     display: flex;
     flex-wrap: wrap;

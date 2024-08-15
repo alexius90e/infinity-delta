@@ -1,0 +1,211 @@
+.main-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(-50%, 0, 0);
+
+  @include mobile {
+    top: calc(100vh - 106px);
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: flex-end;
+    padding-bottom: 16px;
+    overflow: hidden;
+    transform: none;
+    transition: top ease-in-out 0.2s;
+    
+  }
+
+  &:not(.visible) {
+    transition-delay: 0.2s;
+  }
+
+  &.visible {
+    @include mobile {
+      top: 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    display: none;
+    opacity: 0;
+    transition: opacity ease-in-out 0.2s;
+    background-color: $black;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &.visible::after {
+    z-index: 2;
+    opacity: 0.5;
+  }
+
+  &__toggler {
+    position: relative;
+    z-index: 1;
+    display: none;
+    flex: 0 0 auto;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 120px;
+    background-color: #0e0e0e;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-align: center;
+      color: $orange;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $orange;
+      border-radius: 48px;
+      background-color: rgba($color: $orange, $alpha: 0);
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 16px;
+        width: 16px;
+        background: url(../assets/arrow-sm.svg) center no-repeat;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 120px;
+    background-color: #0e0e0e;
+
+    @include mobile {
+      position: absolute;
+      bottom: 16px;
+      z-index: 5;
+      flex-direction: column;
+      padding-top: 56px;
+      border-radius: 44px;
+      background: url(../assets/main-controls-bg.svg) top 16px center no-repeat;
+      background-color: #0e0e0e;
+      transform: translate3d(0, 600px, 0);
+      transition: transform ease-in-out 0.4s;
+      will-change: transform;
+    }
+
+    .visible & {
+      @include mobile {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  &__button {
+    &-book,
+    &-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px;
+      box-sizing: border-box;
+      font-family: 'Belgro', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-align: center;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 48px;
+      transition-property: color, border-color, background-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+      cursor: pointer;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 24px;
+        width: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition-property: filter;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+      }
+    }
+
+    &-book {
+      color: $black;
+      border-color: $white;
+      background-color: $white;
+
+      &:hover {
+        color: $orange;
+        border-color: $orange;
+        background-color: rgba($color: $white, $alpha: 0);
+      }
+
+      &::after {
+        background-image: url(../assets/calendar.svg);
+        filter: brightness(0);
+      }
+
+      &:hover::after {
+        filter: brightness(1);
+      }
+    }
+
+    &-call {
+      color: $orange;
+      border-color: $orange;
+      background-color: rgba($color: $orange, $alpha: 0);
+
+      &:hover {
+        color: $black;
+        border-color: $orange;
+        background-color: rgba($color: $orange, $alpha: 1);
+      }
+
+      &::after {
+        background-image: url(../assets/call.svg);
+        filter: brightness(1);
+      }
+
+      &:hover::after {
+        filter: brightness(0);
+      }
+    }
+  }
+}

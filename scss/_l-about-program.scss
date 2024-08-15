@@ -25,6 +25,13 @@
       transform: translateX(-50%) translateY(-50%);
       filter: brightness(0.4);
 
+      @media screen and (min-width: 1540px) {
+        display: block;
+        max-width: 2560px;
+        height: 1600px;
+        width: auto;
+      }
+
       @include tablet {
         height: 100%;
       }

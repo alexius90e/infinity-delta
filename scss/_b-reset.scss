@@ -24,6 +24,16 @@ body {
   overflow-y: scroll;
   color: $white;
   background-color: $black;
+
+  &.hidden {
+    overflow: hidden;
+
+    &-md {
+      @include laptop {
+        overflow: hidden;
+      }
+    }
+  }
 }
 
 a,
