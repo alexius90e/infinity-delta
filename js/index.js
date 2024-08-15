@@ -167,8 +167,7 @@ if (mainControlsTogglerButton && mainControls && mainControlsButtons) {
     if (isMainControls) mainControls.classList.remove('visible');
   });
 
-  mainControlsButtons.addEventListener('click', (event) => {
-    console.log(mainControlsButtons);
+  mainControlsButtons.addEventListener('click', () => {
     mainControls.classList.remove('visible');
   });
 }

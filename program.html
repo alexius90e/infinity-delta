@@ -445,13 +445,76 @@
             <fieldset class="modal__form-fieldset modal__form-fieldset_dual">
               <label class="modal__form-label">
                 <span class="modal__form-label-title">A convenient day</span>
-                <input class="modal__form-input" type="date" placeholder="--/--/----" required />
-                <span class="modal__form-label-prompt">Choose a convenient day for consultation</span>
+
+                <div class="custom-date-input">
+                  <div class="custom-date-input__fasade"></div>
+                  <div class="custom-date-input__panel">
+                    <div class="custom-date-input__panel-heading">
+                      <span class="custom-date-input__panel-title">Day</span>
+                      <div class="custom-date-input__panel-close"></div>
+                    </div>
+
+                    <div class="custom-date-input__panel-controls">
+                      <div class="custom-date-input__panel-controls-prev disabled"></div>
+                      <div class="custom-date-input__panel-controls-month"></div>
+                      <div class="custom-date-input__panel-controls-next"></div>
+                    </div>
+
+                    <div class="custom-date-input__panel-legenda">
+                      <div class="custom-date-input__panel-legenda-item">Mo</div>
+                      <div class="custom-date-input__panel-legenda-item">Tu</div>
+                      <div class="custom-date-input__panel-legenda-item">We</div>
+                      <div class="custom-date-input__panel-legenda-item">Th</div>
+                      <div class="custom-date-input__panel-legenda-item">Fr</div>
+                      <div class="custom-date-input__panel-legenda-item">Sa</div>
+                      <div class="custom-date-input__panel-legenda-item">Su</div>
+                    </div>
+
+                    <div class="custom-date-input__panel-calendar"></div>
+                  </div>
+                  <input type="date" required />
+                </div>
+
+                <span class="modal__form-label-prompt">
+                  Choose a convenient day for consultation
+                </span>
               </label>
 
               <label class="modal__form-label">
                 <span class="modal__form-label-title">What time is convenient</span>
-                <input class="modal__form-input" type="time" placeholder="User Phone" required />
+
+                <div class="custom-time-input">
+                  <div class="custom-time-input__fasade"></div>
+                  <div class="custom-time-input__panel">
+                    <div class="custom-time-input__panel-heading">
+                      <span class="custom-time-input__panel-title">Time</span>
+                      <div class="custom-time-input__panel-close"></div>
+                    </div>
+
+                    <div class="custom-time-input__panel-controls">
+                      <div
+                        class="custom-time-input__panel-input custom-time-input__panel-input_hour"
+                      >
+                        <div class="custom-time-input__panel-input-title">hour</div>
+                        <div class="custom-time-input__panel-input-minus">-</div>
+                        <div class="custom-time-input__panel-input-time">14</div>
+                        <div class="custom-time-input__panel-input-plus">+</div>
+                      </div>
+
+                      <div
+                        class="custom-time-input__panel-input custom-time-input__panel-input_minute"
+                      >
+                        <div class="custom-time-input__panel-input-title">minute</div>
+                        <div class="custom-time-input__panel-input-minus">-</div>
+                        <div class="custom-time-input__panel-input-time">30</div>
+                        <div class="custom-time-input__panel-input-plus">+</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="time" required />
+                </div>
+
                 <span class="modal__form-label-prompt">
                   Choose a convenient period of time for you to contact you
                 </span>
