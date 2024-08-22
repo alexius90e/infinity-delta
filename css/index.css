@@ -387,9 +387,10 @@ img {
 }
 .header__logo-link {
   display: inline-block;
-  width: 242px;
-  height: 77px;
+  width: 209px;
+  height: 67px;
   background: url(../assets/logo.svg) center no-repeat;
+  background-size: 209px;
 }
 @media (max-width: 992px) {
   .header__logo-link {
@@ -413,7 +414,7 @@ img {
 .header__nav-link {
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
@@ -422,17 +423,17 @@ img {
 }
 @media (max-width: 1200px) {
   .header__nav-link {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .header__nav-link:hover {
   color: #fa6730;
 }
 .header__login-button {
-  padding: 17px;
+  padding: 15px;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   text-align: center;
   color: #000000;
