@@ -51,17 +51,13 @@
     }
 
     &-link {
-      position: absolute;
+      position: absolute !important;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 2;
-      display: none;
-
-      @include mobile {
-        display: inline-block;
-      }
+      z-index: 4 !important;
+      display: inline-block;
     }
 
     &-content {
@@ -92,6 +88,7 @@
     }
 
     &-description {
+      flex: 1 1 auto;
       opacity: 0;
       transition: opacity ease-in-out 0.4s;
 
@@ -105,10 +102,13 @@
     }
 
     &-study {
-      flex: 1 1 auto;
+      position: relative !important;
+      z-index: 6 !important;
+      flex: 0 0 auto;
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
+      width: fit-content;
 
       &-link {
         display: flex;
@@ -133,6 +133,7 @@
         &:hover {
           color: $black;
           background-color: $orange;
+          pointer-events: all;
 
           @include laptop {
             color: $orange;

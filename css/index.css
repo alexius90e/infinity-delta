@@ -838,18 +838,13 @@ img {
   border: 1px solid #fa6730;
 }
 .programs__card-link {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
-  display: none;
-}
-@media (max-width: 576px) {
-  .programs__card-link {
-    display: inline-block;
-  }
+  z-index: 4 !important;
+  display: inline-block;
 }
 .programs__card-content {
   position: relative;
@@ -876,6 +871,7 @@ img {
   color: #fff;
 }
 .programs__card-description {
+  flex: 1 1 auto;
   opacity: 0;
   transition: opacity ease-in-out 0.4s;
 }
@@ -888,10 +884,14 @@ img {
   opacity: 1;
 }
 .programs__card-study {
-  flex: 1 1 auto;
+  position: relative !important;
+  z-index: 6 !important;
+  flex: 0 0 auto;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .programs__card-study-link {
   display: flex;
@@ -917,6 +917,7 @@ img {
 .programs__card-study-link:hover {
   color: #000000;
   background-color: #fa6730;
+  pointer-events: all;
 }
 @media (max-width: 992px) {
   .programs__card-study-link:hover {
