@@ -1,7 +1,9 @@
 .footer {
   position: relative;
   z-index: 10;
+  height: 100px;
   padding: 12px 0;
+  box-sizing: border-box;
   background-color: $black;
 
   & .container {
@@ -9,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    display: none;
   }
 
   &__logo {

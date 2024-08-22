@@ -10,6 +10,8 @@ if (advantages) {
       if (entry.isIntersecting) {
         square.classList.add('animate');
         return;
+      } else {
+        square.classList.remove('animate');
       }
     });
   });

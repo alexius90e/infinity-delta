@@ -499,7 +499,9 @@ img {
 .footer {
   position: relative;
   z-index: 10;
+  height: 100px;
   padding: 12px 0;
+  box-sizing: border-box;
   background-color: #000000;
 }
 .footer .container {
@@ -507,6 +509,7 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  display: none;
 }
 .footer__logo-link {
   display: inline-block;
