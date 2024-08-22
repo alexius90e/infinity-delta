@@ -603,6 +603,7 @@ img {
 .first-screen__logo-image {
   display: block;
   max-width: 100%;
+  width: 240px;
   height: auto;
 }
 @media (max-width: 1200px) {
@@ -611,10 +612,10 @@ img {
   }
 }
 .first-screen__title {
-  margin: 44px 0 52px;
+  margin: 56px 0 24px;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 64px;
+  font-size: 52px;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -622,12 +623,12 @@ img {
 @media (max-width: 1200px) {
   .first-screen__title {
     margin: 36px 0 12px;
-    font-size: 48px;
+    font-size: 44px;
   }
 }
 @media (max-width: 768px) {
   .first-screen__title {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media (max-width: 576px) {
@@ -2526,6 +2527,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .preloader.hidden {
   z-index: 0;
