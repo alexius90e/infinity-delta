@@ -16,7 +16,7 @@
 
   &.visible {
     z-index: 1000;
-    transition-delay: 0;
+    transition-delay: 0s;
   }
 
   &::before {

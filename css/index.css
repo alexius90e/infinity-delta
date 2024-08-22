@@ -2528,7 +2528,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 .preloader.hidden {
   z-index: 0;
@@ -2536,7 +2535,7 @@ img {
 }
 .preloader.visible {
   z-index: 1000;
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 .preloader::before {
   content: "";
