@@ -1056,18 +1056,13 @@ img {
   z-index: 2;
 }
 .all-programs__card-link {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 3;
-  display: none;
-}
-@media (max-width: 576px) {
-  .all-programs__card-link {
-    display: inline-block;
-  }
+  z-index: 3 !important;
+  display: inline-block;
 }
 .all-programs__card-figure {
   position: absolute;
@@ -1094,6 +1089,7 @@ img {
   color: #fff;
 }
 .all-programs__card-description {
+  flex: 1 1 auto;
   margin: 0;
   font-family: "Outfit", sans-serif;
   font-weight: 300;
