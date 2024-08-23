@@ -1063,6 +1063,7 @@ img {
   bottom: 0;
   z-index: 3 !important;
   display: inline-block;
+  cursor: pointer;
 }
 .all-programs__card-figure {
   position: absolute;
@@ -1102,10 +1103,12 @@ img {
 }
 .all-programs__card-study {
   z-index: 4;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .all-programs__card-study-link {
   display: flex;
@@ -1120,7 +1123,9 @@ img {
   color: #fa6730;
   border: 1px solid #fa6730;
   border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
   transition: all ease-in-out 0.1s;
+  cursor: pointer;
 }
 .all-programs__card-study-link:hover {
   color: #000000;
@@ -2562,7 +2567,7 @@ img {
   max-width: 100%;
   width: 240px;
   height: auto;
-  transition: opacity ease-in-out 1s;
+  transition: opacity ease-in-out 0.75s;
   will-change: opacity;
 }
 @media (max-width: 992px) {

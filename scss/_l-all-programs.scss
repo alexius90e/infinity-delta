@@ -76,6 +76,7 @@
       bottom: 0;
       z-index: 3 !important;
       display: inline-block;
+      cursor: pointer;
     }
 
     &-figure {
@@ -120,10 +121,11 @@
 
     &-study {
       z-index: 4;
-      flex: 1 1 auto;
+      flex: 0 1 auto;
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
+      width: fit-content;
 
       &-link {
         display: flex;
@@ -138,7 +140,8 @@
         color: $orange;
         border: 1px solid $orange;
         border-radius: 100px;
-        transition: all ease-in-out 0.1s;
+        background-color: rgba($color: $black, $alpha: 0);
+        transition: all ease-in-out 0.1s;cursor: pointer;
 
         &:hover {
           color: $black;
