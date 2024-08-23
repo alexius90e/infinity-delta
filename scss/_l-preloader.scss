@@ -45,13 +45,13 @@
     z-index: 2;
     display: block;
     max-width: 100%;
-    width: 320px;
+    width: 240px;
     height: auto;
     transition: opacity ease-in-out 1s;
     will-change: opacity;
 
     @include laptop {
-      width: 240px;
+      width: 180px;
     }
   }
 

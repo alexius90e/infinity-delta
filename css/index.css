@@ -2560,14 +2560,14 @@ img {
   z-index: 2;
   display: block;
   max-width: 100%;
-  width: 320px;
+  width: 240px;
   height: auto;
   transition: opacity ease-in-out 1s;
   will-change: opacity;
 }
 @media (max-width: 992px) {
   .preloader__video {
-    width: 240px;
+    width: 180px;
   }
 }
 .preloader.hidden .preloader__video {
