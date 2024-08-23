@@ -2555,25 +2555,25 @@ img {
 .preloader.visible::before {
   opacity: 1;
 }
-.preloader__image {
+.preloader__video {
   position: relative;
   z-index: 2;
   display: block;
   max-width: 100%;
-  width: 237px;
+  width: 320px;
   height: auto;
   transition: opacity ease-in-out 1s;
   will-change: opacity;
 }
 @media (max-width: 992px) {
-  .preloader__image {
-    width: 180px;
+  .preloader__video {
+    width: 240px;
   }
 }
-.preloader.hidden .preloader__image {
+.preloader.hidden .preloader__video {
   opacity: 0;
 }
-.preloader.visible .preloader__image {
+.preloader.visible .preloader__video {
   opacity: 1;
 }
 

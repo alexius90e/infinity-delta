@@ -40,26 +40,26 @@
     opacity: 1;
   }
 
-  &__image {
+  &__video {
     position: relative;
     z-index: 2;
     display: block;
     max-width: 100%;
-    width: 237px;
+    width: 320px;
     height: auto;
     transition: opacity ease-in-out 1s;
     will-change: opacity;
 
     @include laptop {
-      width: 180px;
+      width: 240px;
     }
   }
 
-  &.hidden &__image {
+  &.hidden &__video  {
     opacity: 0;
   }
 
-  &.visible &__image {
+  &.visible &__video  {
     opacity: 1;
   }
 }
