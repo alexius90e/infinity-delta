@@ -65,35 +65,25 @@
   }
 
   &__title {
-    margin: 56px 0 24px;
+    margin: 56px 0 12px;
     font-family: 'Belgro', sans-serif;
     font-weight: 900;
-    font-size: 52px;
+    font-size: 44px;
     text-transform: uppercase;
     text-align: center;
     color: #fff;
 
     @include desktop {
       margin: 36px 0 12px;
-      font-size: 44px;
+      font-size: 40px;
     }
 
     @include tablet {
-      font-size: 36px;
+      font-size: 34px;
     }
 
     @include mobile {
-      font-size: 32px;
-    }
-
-    &_sm {
-      margin: 96px 0 18px;
-      font-size: 48px;
-
-      @include desktop {
-        margin: 36px 0 13px;
-        font-size: 30px;
-      }
+      font-size: 30px;
     }
   }
 
@@ -101,12 +91,16 @@
     max-width: 776px;
     margin: 0 auto;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     color: #fff;
 
     @include desktop {
       font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 
@@ -128,7 +122,7 @@
       padding: 0 24px;
       font-family: 'Belgro', sans-serif;
       font-weight: 900;
-      font-size: 20px;
+      font-size: 16px;
       text-transform: uppercase;
       text-align: center;
       color: #fa6730;

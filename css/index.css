@@ -387,10 +387,10 @@ img {
 }
 .header__logo-link {
   display: inline-block;
-  width: 209px;
-  height: 67px;
+  width: 170px;
+  height: 55px;
   background: url(../assets/logo.svg) center no-repeat;
-  background-size: 209px;
+  background-size: 170px;
 }
 @media (max-width: 992px) {
   .header__logo-link {
@@ -414,7 +414,7 @@ img {
 .header__nav-link {
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
@@ -423,7 +423,7 @@ img {
 }
 @media (max-width: 1200px) {
   .header__nav-link {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .header__nav-link:hover {
@@ -433,7 +433,7 @@ img {
   padding: 15px;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   text-align: center;
   color: #000000;
@@ -449,7 +449,7 @@ img {
 @media (max-width: 992px) {
   .header__login-button {
     padding: 7px 17px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .header__login-button:hover {
@@ -616,10 +616,10 @@ img {
   }
 }
 .first-screen__title {
-  margin: 56px 0 24px;
+  margin: 56px 0 12px;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 52px;
+  font-size: 44px;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -627,26 +627,16 @@ img {
 @media (max-width: 1200px) {
   .first-screen__title {
     margin: 36px 0 12px;
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media (max-width: 768px) {
   .first-screen__title {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media (max-width: 576px) {
   .first-screen__title {
-    font-size: 32px;
-  }
-}
-.first-screen__title_sm {
-  margin: 96px 0 18px;
-  font-size: 48px;
-}
-@media (max-width: 1200px) {
-  .first-screen__title_sm {
-    margin: 36px 0 13px;
     font-size: 30px;
   }
 }
@@ -654,13 +644,18 @@ img {
   max-width: 776px;
   margin: 0 auto;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   color: #fff;
 }
 @media (max-width: 1200px) {
   .first-screen__description {
     font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .first-screen__description {
+    font-size: 14px;
   }
 }
 .first-screen__advantages {
@@ -682,7 +677,7 @@ img {
   padding: 0 24px;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   text-align: center;
   color: #fa6730;
@@ -2533,6 +2528,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .preloader.hidden {
   z-index: 0;
@@ -3040,11 +3036,11 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px;
+  padding: 10px 18px 8px;
   box-sizing: border-box;
   font-family: "Belgro", sans-serif;
   font-weight: 900;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   text-align: center;
   border-width: 1px;

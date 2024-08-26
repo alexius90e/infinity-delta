@@ -21,10 +21,10 @@
   &__logo {
     &-link {
       display: inline-block;
-      width: 209px;
-      height: 67px;
+      width: 170px;
+      height: 55px;
       background: url(../assets/logo.svg) center no-repeat;
-      background-size: 209px;
+      background-size: 170px;
 
       @include laptop {
         width: 49px;
@@ -48,7 +48,7 @@
     &-link {
       font-family: 'Belgro', sans-serif;
       font-weight: 900;
-      font-size: 16px;
+      font-size: 14px;
       text-transform: uppercase;
       text-align: center;
       color: $white;
@@ -56,7 +56,7 @@
       cursor: pointer;
 
       @include desktop {
-        font-size: 14px;
+        font-size: 13px;
       }
 
       &:hover {
@@ -70,7 +70,7 @@
       padding: 15px;
       font-family: 'Belgro', sans-serif;
       font-weight: 900;
-      font-size: 16px;
+      font-size: 14px;
       text-transform: uppercase;
       text-align: center;
       color: $black;
@@ -85,7 +85,7 @@
 
       @include laptop {
         padding: 7px 17px;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       &:hover {
