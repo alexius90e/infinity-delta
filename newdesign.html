@@ -96,7 +96,14 @@
           </div>
         </div>
 
-        <video class="first-screen__video" autoplay muted loop controlsList="nodownload">
+        <video
+          class="first-screen__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          style="user-select: none"
+        >
           <source src="./assets/videos/first-screen.mp4" type="video/mp4" />
         </video>
       </section>
@@ -425,7 +432,7 @@
     </footer>
 
     <section class="preloader visible">
-      <video class="preloader__video" autoplay muted loop controlsList="nodownload">
+      <video class="preloader__video" autoplay muted loop playsinline style="user-select: none">
         <source src="./assets/videos/preloader.mp4" type="video/mp4" />
       </video>
     </section>
